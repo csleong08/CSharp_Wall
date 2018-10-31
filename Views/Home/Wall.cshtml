@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Wall</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <style>
+        .container {
+            width: 1000px;
+            min-height: 1000px;
+            margin: 0 auto;
+        }
+        .message {
+            width: 900px;
+            min-height: 100px;
+        }
+        .comment {
+            margin-left: 100px;
+            width: 750px;
+            min-height: 100px;
+        }
+        span{
+            margin-left: 50px !important;
+        }
+        .textarea{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>CodingDojo Wall | Welcome @ViewBag.userInfo.first_name  | <a href="/Logout">Logout</a></h3> 
+        <p>Post a message</p>
+
+        <form action="AddMessage" method="post">
+            <p><textarea name="message" id="" cols="120" rows="5"></textarea></p>
+
+            <p><input type='submit' value='Post a message'></p>
+        </form>
+        @foreach(var item in @ViewBag.allMessages) 
+        {
+            <p>@item.Users.first_name @item.Users.last_name - @item.created_at.ToString("MMMM dd, yyyy")</p>
+            <p><span>@item.message</span></p>
+            if(@item.usersid == @ViewBag.userInfo.id)
+            {
+                <form action="DeleteMessage" method="post">
+                    <input type="hidden" name="messageid" value=@item.id>
+                    <input type='submit' value='Delete Message?'>
+                    @TempData["message"]
+                </form>
+            }
+            <div class="comment">
+                @foreach(var data in @ViewBag.allComments)
+                {
+                    if(@data.messagesid == @item.id)
+                    {
+                        <p>@data.Users.first_name @data.Users.last_name - @data.created_at.ToString("MMMM dd, yyyy")</p>
+                        <p><span>@data.comment</span></p>
+                    }
+                }
+                <form action="AddComment" method="post">
+                    <p><textarea name="comment" id="" cols="100" rows="5"></textarea></p>
+                    <input type="hidden" name="messageid" value=@item.id>
+                    <p><input type='submit' value='Post a comment'></p>
+                </form>
+                <br>
+            </div>
+
+        }
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>

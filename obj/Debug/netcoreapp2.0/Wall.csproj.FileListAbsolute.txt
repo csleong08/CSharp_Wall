@@ -1,0 +1,11 @@
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/bin/Debug/netcoreapp2.0/Wall.deps.json
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/bin/Debug/netcoreapp2.0/Wall.runtimeconfig.json
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/bin/Debug/netcoreapp2.0/Wall.runtimeconfig.dev.json
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/bin/Debug/netcoreapp2.0/Wall.dll
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/bin/Debug/netcoreapp2.0/Wall.pdb
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/obj/Debug/netcoreapp2.0/Wall.csprojResolveAssemblyReference.cache
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/obj/Debug/netcoreapp2.0/Wall.csproj.CoreCompileInputs.cache
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/obj/Debug/netcoreapp2.0/Wall.AssemblyInfoInputs.cache
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/obj/Debug/netcoreapp2.0/Wall.AssemblyInfo.cs
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/obj/Debug/netcoreapp2.0/Wall.dll
+/Users/csleong/Desktop/Coding Dojo/csharp/Wall/obj/Debug/netcoreapp2.0/Wall.pdb
